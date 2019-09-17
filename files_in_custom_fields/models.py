@@ -43,7 +43,11 @@ class MyType(models.Field):
         # just like it happens with the file outside of MyType
         # but attribute becomes (CharField, TemporaryUploadedFile)
         # what is identical to data and throws error when saving
+        # Default behavior:
         setattr(instance, self.name, data)
+        # I suppose I should write something like below, but what exactly?
+        # setattr(getattr(instance, self.name), "name_in_field", data[0])
+        # setattr(getattr(instance, self.name), "file_in_field", data[1])
 
 
 class Model(models.Model):
