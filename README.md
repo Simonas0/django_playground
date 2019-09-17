@@ -16,6 +16,12 @@ Start PostgreSQL
 Setup PostgreSQL for playground
 ```./execute_sql.sh playground_setup.sql```
 
+Make directory for saved files
+```mkdir /var/django_playground```
+
+Change directory owner
+```chown your-username /var/django_playground```
+
 Make migrations
 ```python manage.py makemigrations```
 
