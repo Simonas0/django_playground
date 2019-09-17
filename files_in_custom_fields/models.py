@@ -19,9 +19,7 @@ class OverwriteStorage(FileSystemStorage):
 
 
 def file_path(instance, filename):
-    return os.path.join(
-        "{}{}".format(instance.id, os.path.splitext(filename)[1])
-    )
+    return filename
 
 
 class Field(forms.Field):
