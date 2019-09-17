@@ -36,16 +36,16 @@ class MyType(models.Field):
     def formfield(self, form_class=None, choices_form_class=None, **kwargs):
         return super().formfield(**{"form_class": Field})
 
-    def save_form_data(self, instance, data):
-        # I want attribute to become tuple (CharField, FieldFile)
-        # just like it happens with the file outside of MyType
-        # but attribute becomes (CharField, TemporaryUploadedFile)
-        # what is identical to data and throws error when saving
-        # Default behavior:
-        setattr(instance, self.name, data)
-        # I suppose I should write something like below, but what exactly?
-        # setattr(getattr(instance, self.name), "name_in_field", data[0])
-        # setattr(getattr(instance, self.name), "file_in_field", data[1])
+    # def save_form_data(self, instance, data):
+    #     # I want attribute to become tuple (CharField, FieldFile)
+    #     # just like it happens with the file outside of MyType
+    #     # but attribute becomes (CharField, TemporaryUploadedFile)
+    #     # what is identical to data and throws error when saving
+    #     # Default behavior:
+    #     setattr(instance, self.name, data)
+    #     # I suppose I should write something like below, but what exactly?
+    #     # setattr(getattr(instance, self.name), "name_in_field", data[0])
+    #     # setattr(getattr(instance, self.name), "file_in_field", data[1])
 
 
 class Model(models.Model):
