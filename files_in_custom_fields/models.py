@@ -20,7 +20,7 @@ class OverwriteStorage(FileSystemStorage):
 
 def file_path(instance, filename):
     return os.path.join(
-        "files", "{}{}".format(instance.id, os.path.splitext(filename)[1])
+        "{}{}".format(instance.id, os.path.splitext(filename)[1])
     )
 
 
