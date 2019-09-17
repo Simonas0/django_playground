@@ -30,3 +30,5 @@ Migrate
 
 Run server
 ```python manage.py runserver```
+
+Open ```localhost:8000/files``` in browser, try to upload files (first file is in model and textbox with second file are in composite field which is in model)
